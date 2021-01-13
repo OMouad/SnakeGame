@@ -33,9 +33,11 @@ public class GamePanel extends JPanel implements ActionListener{
     }
     public void startGame(){
     }
-    @Override
     public void paintComponent(Graphics g){}
     public void draw(Graphics g){}
+    public void newApple(){
+        
+    }
     public void move(){}
     public void checkApple(){}
     public void checkCollisions(){}
