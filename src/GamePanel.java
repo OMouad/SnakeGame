@@ -9,7 +9,7 @@ public class GamePanel extends JPanel implements ActionListener{
     static final int SCREEN_HEIGHT = 750;
     static final int UNIT_SIZE = 50;//The size of the objects in the game
     static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/(UNIT_SIZE*UNIT_SIZE);//The number of objects that is possible to display on the screen
-    static final int DELAY = 175;
+    static final int DELAY = 85;
     //these arrays are going to hold all the coordinates of all the snake's bodyparts including it's head
     final int x[]= new int[GAME_UNITS]; 
     final int y[]= new int[GAME_UNITS];
@@ -81,7 +81,13 @@ public class GamePanel extends JPanel implements ActionListener{
                 break;
         }
     }
-    public void checkApple(){}
+    public void checkApple(){
+        if ((x[0]==appleX)&&(y[0]==appleY)){
+            bodyParts++;
+            applesEaten++;
+            newApple();
+        }
+    }
     public void checkCollisions(){
         // Checks if the body collides with the head
         for (int i = bodyParts;i>0;i--){
